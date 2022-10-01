@@ -8,7 +8,7 @@ app.use(express.json());
 
     const { createOrder , updateOrder, getUserOrder, deleteOrder, getAllOrders } = orderController;
     router.route("/order/create/:userId").post(createOrder);
-  // router.route("/order/update/:userId").patch(updateOrder);
+    router.route("/order/update/:userId").patch(updateOrder);
     router.route("/order/:userId").get(getUserOrder).delete(deleteOrder);
     router.route("/order/allOrders").get(getAllOrders) 
     

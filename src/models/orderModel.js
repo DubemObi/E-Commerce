@@ -2,19 +2,13 @@ const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema(
   {
-    Userid : {
-        userId: { type: String, required: [true, "input a valid userId"] },
-    // Required :  mongoose.schema.ObjectId,
-     //Ref : "User"
-     },
+   userId: { type: String, required: [true, "Input a valid userId"] },
 
     products: [
       {
         productId: {
           productId: {
             userId: { type: String, required: true },
-            //type: mongoose.Schema.Types.ObjectId,
-            //ref: "Product",
         },
 
         quantity: {
@@ -27,6 +21,7 @@ const OrderSchema = new mongoose.Schema(
 
     price: { type: Number,
       required: true },
+
 
     totalAmount: {
               type: Number,

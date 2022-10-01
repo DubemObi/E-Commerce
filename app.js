@@ -2,6 +2,7 @@ var express = require("express");
 const UserRouter = require("./routes/userRoute");
 const productRouter = require("./routes/productRoute");
 const cartRouter = require("./routes/cartRoute");
+const orderRouter = require("./routes/orderRoute");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
@@ -15,6 +16,7 @@ app.use(cookieParser());
 app.use("/", productRouter);
 app.use("/", UserRouter);
 app.use("/", cartRouter);
+app.use("/", orderRouter);
 
 mongoose.connect(process.env.mongoDB);
 app.listen(PORT, () => {
