@@ -44,7 +44,7 @@ const createOrder = ( async (req, res) => {
     if(!user)
       {
         return res.status(400).json({
-          message: "Invalid User! "
+          message: "Invalid User ID!"
         })
       }
       const order = await Order.findOne(orderId);
@@ -67,7 +67,7 @@ const createOrder = ( async (req, res) => {
  }
 
 
- //DELETE ORDER
+ //DELETE AN ORDER
  const deleteOrder = async (req, res) => {
     try {
       const {userId , orderId} = req.params;
@@ -75,7 +75,7 @@ const createOrder = ( async (req, res) => {
       if(!user)
         {
           return res.status(400).json({
-            message: "Invalid User! "
+            message: "Invalid User ID! "
           })
         }
       const order = await Order.findOne(orderId);
